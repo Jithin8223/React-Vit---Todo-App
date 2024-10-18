@@ -5,12 +5,22 @@ import { useState } from 'react'
 
 export default function Todo() {
   const [todo, setTodo]=useState('')
+  const [todos,setTodos]=useState([])
+
+  const addTodo=() => {
+
+    setTodos([...todos,todo])
+    console.log(todos)
+
+  }
+
+
   return (
     <div className='container'>
       <h1>TODO APP</h1>
       <form className='form-group'>
-        <input type="text" value={todo} placeholder='Enter Your Todo' className='form-control' onChange={(event)=> setInput(event.target.value)}/>
-        <button>ADD</button>
+        <input type="text" value={todo} placeholder='Enter Your Todo' className='form-control' onChange={(event)=> setTodo(event.target.value)}/>
+        <button onClick={addTodo}>ADD</button>
       </form>
       <div className='list'>
         <ul>
@@ -22,3 +32,4 @@ export default function Todo() {
     </div>
   )
 }
+
