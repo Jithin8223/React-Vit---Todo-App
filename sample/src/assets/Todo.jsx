@@ -15,9 +15,20 @@ export default function Todo() {
   };
 
   const addTodo = () => {
-    setTodos([...todos, {list:todo,id : Date.now(),status:false}]);
-    console.log(todos);
-    setTodo("");
+    if(todo !== ''){
+      setTodos([...todos, {list:todo,id : Date.now(),status:false}]);
+      console.log(todos);
+      setTodo("");
+    } 
+    if (editId){
+      const editTodo = todos.find((todo)=>todo.id == editId)
+      const updateTodo = todos.map((to)=> to.id === editTodo.id
+      ? (to = {id: to.id,list:todo})
+      : (to = {id:to.id , list : to.list}))
+      setTodos(updateTodo)
+      setEditID(0);
+      setTodo('')
+    }
   };
 
   const inputRef = useRef("null");
@@ -42,7 +53,6 @@ const onEdit = (id) =>{
  setTodo(editTodo.list)
  setEditID(editTodo.id)
 }
-
   return (
     <div className="container">
       <h1>TODO APP</h1>

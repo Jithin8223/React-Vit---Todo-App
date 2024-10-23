@@ -2,13 +2,14 @@
   width: 400px;
   margin: 50px auto;
   padding: 30px;
-  background-color: #00526f;
+  background-image: linear-gradient(to right, #002543, #00808f);
   border: 1px solid #eaeaea;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
 }
+
 h1 {
   color: #ffffff;
   font-size: 1.8rem;
@@ -16,7 +17,7 @@ h1 {
   margin-bottom: 30px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-weight:bolder ;
+  font-weight: bolder;
 }
 
 .form-group {
@@ -38,10 +39,9 @@ input[type="text"] {
   transition: all 0.2s ease;
 }
 
-
 button {
   padding: 12px 18px;
-  Background: rgba(1, 150, 243, 0.3);
+  background: linear-gradient(to right, #0056b3, #00808f);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -52,7 +52,6 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
   box-shadow: 0px 8px 15px rgba(249, 252, 255, 0.2);
 }
 
@@ -77,7 +76,7 @@ li {
   border: none;
 }
 
-.list{
+.list {
   margin-top: 30px !important;
 }
 
@@ -86,18 +85,46 @@ li:hover {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
+.list-items{
+  display: flex;
+}
+
+.list-items .list-icons{
+  padding-left: 5px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#complete{
+  color: #000000;
+}
+
+#edit{
+  color: #000000;
+}
+
+#delete{
+  color: #000000;
+}
+
+#list-1{
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+
 @media (max-width: 500px) {
   .container {
-    width: 90%;
-    padding: 20px;
+      width: 90%;
+      padding: 20px;
   }
 
   .form-group {
-    flex-direction: column;
-    gap: 12px;
+      flex-direction: column;
+      gap: 12px;
   }
 
   input[type="text"] {
-    width: 100%;
+      width: 100%;
   }
 }
+
